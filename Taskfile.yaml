@@ -1,0 +1,13 @@
+version: "3"
+
+tasks:
+  default: # Если не указать конкретную команду, будут выполнены дефолтные
+    cmds:
+      - task: migrate
+
+  migrate: ## Команда для миграции базы данных
+    aliases: ## Алиасы команды, для простоты использования
+      - migrate
+    desc: "Run the database migrations"
+    cmds: ## Тут описываем необходимые bash-команды
+      - go run ./cmd/migrator/ --storage-path=./storage/sso.db --migrations-path=./migrations
