@@ -40,7 +40,8 @@ type AppProvider interface {
 var (
 	ErrInbalidCredentials = errors.New("invalid credentials")
 	ErrInbalidAppID       = errors.New("invalid app id")
-	ErrUserExists         = errors.New("invalid app id")
+	ErrUserExists         = errors.New("user already exists")
+	ErrUserNotFound       = errors.New("user not found")
 )
 
 // New возвращает новый экземляр Auth. (constructor function)
